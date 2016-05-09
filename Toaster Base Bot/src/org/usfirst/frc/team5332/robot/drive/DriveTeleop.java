@@ -23,7 +23,7 @@ public class DriveTeleop extends DriveCommandLayer{
 	private DriveTeleopStraight driveStraight;
 
 	/**
-	 * Constructor.
+	 * Constructor. Creates a new {@link DriveTeleop}
 	 */
 	public DriveTeleop(){
 		gamepad = new Gamepad(0, true);

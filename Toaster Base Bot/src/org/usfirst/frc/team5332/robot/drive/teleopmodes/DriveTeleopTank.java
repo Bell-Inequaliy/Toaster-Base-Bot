@@ -16,8 +16,13 @@ public class DriveTeleopTank extends DriveCommandLayer{
 	
 	private Gamepad gamepad;
 	
-	public DriveTeleopTank(Gamepad js){
-		gamepad = js;
+	/**
+	 * Constructor. Creates a new DriveTeleopTank
+	 * 
+	 * @param pad The gamepad object to control
+	 */
+	public DriveTeleopTank(Gamepad pad){
+		gamepad = pad;
 	}
 
 	@Override

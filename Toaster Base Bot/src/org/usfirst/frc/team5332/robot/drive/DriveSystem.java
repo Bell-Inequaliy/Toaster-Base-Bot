@@ -19,7 +19,7 @@ public class DriveSystem extends DriveSystemLayer{
 	private double rightValue;
 	
 	/**
-	 * Constructor.
+	 * Constructor. Creates a new {@link DriveSystem}
 	 */
 	public DriveSystem(){
 		

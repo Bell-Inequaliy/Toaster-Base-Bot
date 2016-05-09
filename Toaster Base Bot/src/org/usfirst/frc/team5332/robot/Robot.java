@@ -2,6 +2,8 @@ package org.usfirst.frc.team5332.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import subsystem.Subsystem;
+import utils.time.WPITimer;
+
 import org.usfirst.frc.team5332.robot.drive.DriveHardwareRobot;
 import org.usfirst.frc.team5332.robot.drive.DriveSystem;
 import org.usfirst.frc.team5332.robot.drive.DriveTeleop;
@@ -25,6 +27,7 @@ public class Robot extends IterativeRobot {
 	 * Defines the drive subsystem.
 	 */
 	Subsystem<DriveHardwareLayer,DriveSystemLayer,DriveCommandLayer> drive;
+	WPITimer timer;
 	
     /**
      * This method is run when the robot is first started up and should be
@@ -42,6 +45,10 @@ public class Robot extends IterativeRobot {
 		}catch(Exception e){
 			System.out.println(e);
     	}
+		
+		timer = new WPITimer(); // Initialize the timer
+		SubsystemCoordinator.get(); // Initialize the subsystem coordinator
+		SubsystemCoordinator.get().setTimer(timer); // Set the global timer to our WPI timer
     }
     
     /**
@@ -49,7 +56,7 @@ public class Robot extends IterativeRobot {
      * autonomous
      */
     public void autonomousInit() {
-    	
+    	SubsystemCoordinator.get().startTimer(); // Start the global timer
     }
 
     /**

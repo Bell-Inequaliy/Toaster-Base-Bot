@@ -25,6 +25,9 @@ public class DriveHardwareRobot extends DriveHardwareLayer{
 	private TalonSRX rightMotor1;
 	private TalonSRX rightMotor2;
 	
+	/**
+	 * Constructor. Creates a new {@link DriveHardwareRobot}
+	 */
 	public DriveHardwareRobot(){
 		leftMotor1 = new TalonSRX(0);
 		leftMotor2 = new TalonSRX(1);

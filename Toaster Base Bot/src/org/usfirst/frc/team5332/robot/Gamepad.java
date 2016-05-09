@@ -16,12 +16,18 @@ public class Gamepad {
 	private Joystick js;
 	private double scale;
 	
+	/**
+	 * Constructor for a gamepad instance.
+	 * 
+	 * @param index : The USB port index for the gamepad.
+	 * @param inverted : If the gamepad has inverted stick axes.
+	 */
 	public Gamepad (int index, boolean inverted){
 		js = new Joystick(index);
-		if(inverted){
-			scale = -1;
+		if(inverted){   // If it is inverted we want to invert all our inputs
+			scale = -1; // Multiply by -1 to invert
 		}else{
-			scale = 1;
+			scale = 1;  // Leave it be otherwise
 		}
 	}
 	

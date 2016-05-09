@@ -16,8 +16,13 @@ public class DriveTeleopStraight extends DriveCommandLayer{
 	
 	private Gamepad gamepad;
 	
-	public DriveTeleopStraight(Gamepad js){
-		gamepad = js;
+	/**
+	 * Constructor. Creates a new {@link DriveTeleopStraight}
+	 * 
+	 * @param pad The gamepad object to control
+	 */
+	public DriveTeleopStraight(Gamepad pad){
+		gamepad = pad;
 	}
 
 	@Override
