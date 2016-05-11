@@ -27,7 +27,7 @@ public class Logger {
 	 * 
 	 * @throws FileNotFoundException
 	 */
-	public Logger() throws FileNotFoundException{
+	private Logger() throws FileNotFoundException{
 		System.setOut(out);
 		fileNotFound = false;
 	}
@@ -45,7 +45,7 @@ public class Logger {
 			try{
 				instance = new Logger();
 				startTime = System.currentTimeMillis();
-			}catch(Exception e){
+			}catch(FileNotFoundException e){
 				System.out.println("EXCEPTION! FILE NOT FOUND: "+e);
 				fileNotFound = true;
 			}
@@ -63,13 +63,9 @@ public class Logger {
 	 */
 	public void log(Object arg){
 		if(!fileNotFound){
-			if(!(instance == null)){
-				System.out.println("Robot Logger: "+arg+";; Time:"+(System.currentTimeMillis() - startTime));
-			}else{
-				System.out.println("WARNING: INSTANCE NULL");
-			}
+			System.out.println("Robot Logger: "+arg+";; Time:"+(System.currentTimeMillis() - startTime));
 		}else{
-			System.out.println("EXCEPTION! FILE NOT FOUND: SEE ABOVE.");
+			
 		}
 	}
 	
